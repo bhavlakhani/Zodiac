@@ -1,0 +1,67 @@
+#logo{
+    height:4vw;
+    width:9vw;
+    margin:0vw 0vw 0vw 0vw;
+    margin-top: -1.5vh; 
+    background-color: rgb(226, 224, 111);
+}
+
+.well{
+    background-color: rgb(226, 224, 111);
+}
+*{
+    background-color: whitesmoke;
+}
+#btn-favourite{
+    margin-left: 32vw;
+    background-color: rgb(42, 24, 145);
+    color: rgb(226, 224, 111);
+    height:3vw;
+    width:8vw;
+    text-align: inherit
+}
+#btn-favouritelogin{
+    margin-left: 1.5vw;
+    background-color: rgb(42, 24, 145);
+    color: rgb(226, 224, 111);
+    height:3vw;
+    width:6vw;
+    text-align: inherit
+}
+
+
+
+#favour{
+    font-size: 1vw;
+    background-color: none;
+    color: red;
+}
+
+img{
+    
+    width:100vw;
+    
+}
+
+
+#im{
+    width: 10vw;
+    height:10vw;
+    
+}
+
+#image{
+width:14vw;
+height: 10vw;
+}
+
+#color{
+
+    background-color: whitesmoke;
+}
+
+#bcolor{
+
+    background-color: whitesmoke;
+}
+

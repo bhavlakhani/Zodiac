@@ -1,0 +1,33 @@
+<div class="col-md-6">
+  <h2> Search List</h2>
+  <input type="text" [(ngModel)]="movie3.movieName" placeholder="search"/>
+<button (click)="searchMovies(movie3.movieName)"></button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      
+      <th>Movie name</th>
+      <th>Movie pictureurl</th>
+      <th>movieId</th>
+      <th>Release date</th>
+      <th>Description</th>
+      <th>button</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies">
+      
+      <td>{{movie.movieId}}</td>
+      <td>{{movie.movieName}}</td>
+      <td>{{movie.moviePosterUrl}}</td>
+      <td>{{movie.movieReleaseDate}}</td>
+      <td>{{movie.movieDescription}}</td>
+      <td><button class="btn btn-danger" (click)="addToFav(movie)"> Add</button></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+<app-navbar></app-navbar>
+<app-search-list></app-search-list>
+<a routerLink="/fav-list">Get Favlist</a>

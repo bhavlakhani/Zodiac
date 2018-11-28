@@ -1,0 +1,247 @@
+#bodi{
+    margin-top: -2vw;
+}
+
+
+#backGround{
+    height:40.2vw;
+    width:100%;
+}
+
+#logo{
+    height:4vw;
+    width:9vw;
+    margin:0vw 0vw 0vw 1vw;
+    margin-top: -1.5vh; 
+}
+
+.well{
+    background-color: rgb(226, 224, 111);
+}
+
+#btn-favourite{
+    margin-left: 32vw;
+    background-color: rgb(42, 24, 145);
+    color: rgb(226, 224, 111);
+    height:3vw;
+    width:8vw;
+    text-align: inherit
+}
+
+#btn-favouritesignup{
+    margin-left: 30.5vw;
+    background-color: rgb(42, 24, 145);
+    color: rgb(226, 224, 111);
+    height:3vw;
+    width:7vw;
+    text-align: inherit
+}
+
+#btn-favouritelogin{
+    margin-left: 1.5vw;
+    background-color: rgb(42, 24, 145);
+    color: rgb(226, 224, 111);
+    height:3vw;
+    width:6vw;
+    text-align: inherit
+}
+
+
+
+#favour{
+    font-size: 1vw;
+}
+
+#tag{
+
+  margin-left: 23.6vw;
+  margin-top:-25.6vw;
+  font-size: 5vw;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:  rgb(226, 224, 111);
+   
+}
+
+
+
+form.example input[type=search] {
+    padding: 0.732vw;
+    font-size: 1.24vw;
+    border: 0.07vw solid grey;
+    width: 50%;
+    background: #f1f1f1;
+    margin-left:20vw;
+}
+
+form.example button {
+ 
+    width: 10vw;
+    padding: 0.732vw;
+    background: rgb(226, 224, 111);
+    color: white;
+    font-size: 1.24vw;
+    border: 0.07vw solid rgb(42, 24, 145);
+    border-left: none;
+    cursor: pointer;
+    
+}
+
+form.example button:hover {
+    background:rgb(194, 192, 103);
+}
+
+form.example{
+    margin: auto;
+    
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* * {
+    box-sizing: border-box;
+  } */
+  
+  
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL div a {
+    border: 1px solid rgb(194, 192, 103);
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 0.878vw;
+    text-decoration: none;
+    font-size: 1.317vw;
+    color: rgb(42, 24, 145);
+    display: block
+  }
+  
+  #myUL div a:hover:not(.header) {
+    background-color: rgb(194, 192, 103);
+  }
+
+  #listing{
+      width:49.2vw;
+      margin-left: 20.1vw;
+  }
+
+  .scrolling-wrapper1 {
+  
+        height:7vw;
+        overflow-y: scroll;
+      
+  }  
+
+  .scrolling-wrapper2 {
+  
+    height:8.9vw;
+    overflow-y: scroll;
+  
+}  
+
+  #myUL li button:hover:not(.header) {
+    background-color: rgb(194, 192, 103);
+  }
+
+  #moreItem{
+      width:100%;
+      height:100%;
+      border: 1px solid rgb(194, 192, 103);
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 0.878vw;
+    text-decoration: none;
+    font-size: 1.317vw;
+    color: rgb(42, 24, 145);
+    display: block
+  }
+
+  
+    
+    .card-title {
+        text-transform: uppercase;
+        color: #E44424;
+        font-size:1vw;
+    }
+    
+    .card-text {
+        margin-top:0.497vw;
+        margin-bottom:0.534vw;
+        background-color:#FFFFFF;
+        color:#000000;
+        font-size:0.8vw;
+        padding-right: 1vw;
+    }
+    
+    
+    .imga{
+        height:7vw;
+        width:12vw;
+        margin:1.5vw 0vw 1vw 2vw;
+        
+    } 
+    
+    
+    
+    #data{
+    margin:-10.3vw 0vw 3vw 18vw;
+    }
+    
+    #loop{
+        background-color: white;
+        border: 0.073vw solid rgb(42, 24, 145);
+        border-radius: .6vw;
+        height:9vw;
+        width:40vw;
+     
+    }
+ 
+    
+    #dot {
+        height: 4vw;
+        width: 4vw;
+        background-color:rgb(173, 171, 16);
+        border-radius:10vw;
+        margin-left: 42vw;
+        margin-top:-13vw;
+       
+      }
+
+      
+      @media screen and (max-width: 800px) {
+
+        #btn-favouritesignup{
+            margin-left: 26vw;
+            background-color: rgb(42, 24, 145);
+            color: rgb(226, 224, 111);
+            height:3vw;
+            width:7vw;
+            text-align: inherit
+        }
+
+        #dot {
+            height: 4vw;
+            width: 4vw;
+            background-color:rgb(173, 171, 16);
+            border-radius:10vw;
+            margin-left: 42vw;
+            margin-top:-18vw;
+           
+          } 
+
+          .card-text {
+            margin-top:-0.35vw;
+            margin-bottom:1vw;
+            background-color:#FFFFFF;
+            color:#000000;
+            font-size:0.8vw;
+            padding-right: 1vw;
+        }
+}    

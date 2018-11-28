@@ -1,0 +1,61 @@
+body{
+    background-color: rgb(194, 192, 103);
+    height: 80vw;
+    
+    }
+    
+    .card-title {
+        text-transform: uppercase;
+        color: #E44424;
+        font-size:1.3vw;
+    }
+    
+    .card-text {
+        margin-top:11px;
+        margin-bottom: 11px;
+        background-color:#FFFFFF;
+        color:#000000;
+        font-size:1vw;
+    }
+    
+    
+    .imag{
+        height:15vw;
+        width:22vw;
+        margin:1.5vw 0vw 1vw 2vw;
+        
+    } 
+    
+    
+    
+    #data{
+    margin:-17vw 0vw 3vw 28vw;
+    }
+    
+    #loop{
+        background-color: white;
+        margin-top: 1vw;
+        border: 0.073vw solid rgb(42, 24, 145);
+        border-radius: .6vw;
+        height:18vw;
+        width:52vw;
+        margin-left: 26vw;
+        transition-property: width, height;
+        transition-duration: .55s;
+    }
+    
+    #loop:hover{
+        width:53vw;
+        height:19vw;
+        margin-left: 25.5vw;
+    }
+    
+    #dot {
+        height: 4vw;
+        width: 4vw;
+        background-color: #E44424;
+        border-radius:10vw;
+        margin-left: 45vw;
+       
+      }
+    
