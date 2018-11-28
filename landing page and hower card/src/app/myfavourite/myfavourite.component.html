@@ -1,0 +1,28 @@
+
+<head>
+
+  <link data-require="bootstrap-css@3.3.6"
+data-semver="3.3.6" rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<title>STAR MOVIES</title>
+</head>
+
+  <button type="button" class="btn btn-danger pull-right" (click) = "logout()">Logout</button>
+<br>
+
+<div id="loop" *ngFor="let movie of favMovieList">
+<div id="image">
+  <img  class="imag" src='{{movie.moviePosterUrl}}' alt="Movie Poster">
+</div>
+<div id="data">
+
+  <h3 class="card-title text-danger"><strong>{{movie.movieName}}</strong></h3>
+  <p class="card-text text-justify">{{shortDesc(movie.movieDescription)}}</p>
+  <p class="card-text text-justify">{{movie.movieReleaseDate}}</p>
+</div>
+
+<button type="button" id="dot" class="btn btn-danger" (click)="deleteFavourite(movie.movieId)"><em class="glyphicon glyphicon-trash"></em></button>
+</div>
+<br><br><br><br>
+<button   class="btn btn-info pull-left" (click) ="moveTo('p')">Previous</button>
+<button   class="btn btn-info pull-right" (click) = "moveTo('n')">Next Page</button>

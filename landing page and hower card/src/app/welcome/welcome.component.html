@@ -1,0 +1,52 @@
+<head>
+
+    <link data-require="bootstrap-css@3.3.6"
+  data-semver="3.3.6" rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <title>STAR MOVIES</title>
+  </head>
+   <div class="well">
+    <img src="../../assets/images/logo.png" alt="logo" id="logo" class="float-left">
+    <button type="button" class="btn btn-large" id="btn-favourite" (click)="favList()"><strong id="favour"> &nbsp;Favourites</strong></button>
+    
+    <button type="button" class="btn btn-large pull-right" id="btn-favouritelogin" (click)="logout()"><strong id="favour"><span class="	glyphicon glyphicon-log-in " ></span>  Logout </strong></button>
+  </div>
+
+  <div id="bodi">
+  <img src="../../assets/images/theatre.jpg" alt="backGround" id="backGround">
+  <p id="tag">Eat.Sleep.Watch.Repeat<span class="glyphicon glyphicon-play"></span></p> 
+  
+  <form class="example" >
+    <input type="Search"  autocomplete="off" name = "query" id="myInput" [(ngModel)]="title" (keyup)="myFunction()" placeholder="Search.." title="Search the movie you like">
+    <button type="button" (click)="searching()"><em class="glyphicon glyphicon-search"></em></button>
+  
+    <div class="container-fluid" id="listing" class="{{myClass}}"> 
+  
+      <div id="myUL" [hidden]="divMovieList">
+        <div *ngFor = "let moviename of movieL" id="loop">
+         
+              <div id="image">
+                  <img class="imga" src='{{moviename.moviePosterUrl}}' alt="Movie Image">
+              </div>
+        
+            
+              <div id="data">
+                
+                  <h3 class="card-title text-danger"><strong>{{moviename.movieName}}</strong></h3>
+                  <p class="card-text text-justify">{{shortDesc(moviename.movieDescription)}}</p>
+                  <p class="card-text text-justify">{{moviename.movieReleaseDate}}</p>
+              </div>
+              <div id="addition">
+               <button type="button" id="dot" class="btn btn-danger" (click)="addToFavourite(moviename)"><em class="glyphicon glyphicon-plus"></em></button>
+              </div>
+
+             
+      
+        </div>
+       
+      </div>
+      </div>
+  </form>
+  </div>
+
+ 

@@ -1,0 +1,6 @@
+projectKey=movie-app
+serverUrl=http://localhost:9000
+serverVersion=6.7.5.38563
+dashboardUrl=http://localhost:9000/dashboard/index/movie-app
+ceTaskId=AWdPrasZw3Ej3I1zm6Fx
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWdPrasZw3Ej3I1zm6Fx
