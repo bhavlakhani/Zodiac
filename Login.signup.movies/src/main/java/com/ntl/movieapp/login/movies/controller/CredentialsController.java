@@ -38,7 +38,7 @@ public class CredentialsController {
 	
 	@PostMapping("/login/email")
 	public CredentialsBean loginEmail(@RequestBody CredentialsBean credentialsBean) {
-		    System.out.println(credentialsBean.getEmailID() + " " + credentialsBean.getPassword());
+		   
 			return credService.loginEmail(credentialsBean);
 		
 	}

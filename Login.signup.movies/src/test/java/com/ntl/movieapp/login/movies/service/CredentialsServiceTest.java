@@ -8,6 +8,8 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import static org.mockito.Mockito.when;
 
+import java.util.Optional;
+
 import com.ntl.movieapp.login.movies.dao.CredentialsDao;
 import com.ntl.movieapp.login.movies.model.CredentialsBean;
 @RunWith(MockitoJUnitRunner.class)
@@ -23,12 +25,12 @@ public class CredentialsServiceTest {
 
 	@Test
 	public void testAuthenticateUserId() {
-		when(credDao.getOne("Ra3456")).thenReturn(credentialsBean);
+		when(credDao.findById("Ra3456")).thenReturn(Optional.of(credentialsBean));
 		CredentialsService serve=new CredentialsService(credDao);
 		boolean result = serve.authenticateUserId(credentialsBean);
 		assertEquals(true,result);
 		
-		CredentialsBean credentialsBean2=new CredentialsBean("Rashi","Rashi@123",1, "rasi161@gmail.com","73645778456");
+		CredentialsBean credentialsBean2=new CredentialsBean("Rashi","Rashi@123",1, "rasi161@gmail.com","7364577845");
 		boolean result2 =serve.authenticateUserId(credentialsBean2);
 		assertEquals(false,result2);
 		
@@ -37,12 +39,12 @@ public class CredentialsServiceTest {
 	
 	@Test
 	public void testAuthenticatePhone() {
-		when(credDao.getOne("73645726456")).thenReturn(credentialsBean);
+		when(credDao.findByMobileNo("7364572645")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		boolean result = serve.authenticatePhone(credentialsBean);
 		assertEquals(true,result);
 		
-		CredentialsBean credentialsBean2=new CredentialsBean("Rashi","Rashi@123",1, "rasi16@gmail.com","73645726456");
+		CredentialsBean credentialsBean2=new CredentialsBean("Rashi","Rashi@123",1, "rasi16@gmail.com","7364572645");
 		boolean result2 =serve.authenticatePhone(credentialsBean2);
 		assertEquals(false,result2);
 		
@@ -52,21 +54,21 @@ public class CredentialsServiceTest {
 	
 	@Test
 	public void testAuthenticateEmail() {
-		when(credDao.getOne("")).thenReturn(credentialsBean);
+		when(credDao.findByEmailID("rasi16@gmail.com")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		boolean result = serve.authenticateEmail(credentialsBean);
 		assertEquals(true,result);
 		
 		CredentialsBean credentialsBean2=new CredentialsBean("Rashi","Rashi@123",1, "rasi16@gmail.com","73645726456");
 		boolean result2 =serve.authenticateEmail(credentialsBean2);
-		assertEquals(false,result2);
+		assertEquals(true,result2);
 		
 		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testChangeLoginStatus() {
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		when(credDao.getOne("Ra3456")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		boolean result = serve.changeLoginStatus(credentialsBean,0);
 		assertEquals(true,result);
@@ -79,15 +81,16 @@ public class CredentialsServiceTest {
 
 	@Test
 	public void testLoginUserId() {
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		CredentialsBean cred=new CredentialsBean();
+		when(credDao.getOne("Ra3456")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
-		CredentialsBean cred = serve.loginUserid(credentialsBean);
-		assertEquals(cred,credentialsBean);
+		 cred = serve.loginUserid(credentialsBean);
+		assertEquals(cred.getUserID(),credentialsBean.getUserID());
 	}
 	
 	@Test
 	public void testLoginEmail() {
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		when(credDao.findByEmailID("rasi16@gmail.com")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		CredentialsBean cred = serve.loginEmail(credentialsBean);
 		assertEquals(cred,credentialsBean);
@@ -96,7 +99,7 @@ public class CredentialsServiceTest {
 	
 	@Test
 	public void testLoginPhone() {
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		when(credDao.findByMobileNo("7364572645")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		CredentialsBean cred = serve.loginPhone(credentialsBean);
 		assertEquals(cred,credentialsBean);
@@ -107,7 +110,7 @@ public class CredentialsServiceTest {
 	public void testForgotPassword() {
 		credentialsBean.setAuthAnswer("");
 		credentialsBean.setAuthQuestion("");
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		when(credDao.getOne("Ra3456")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
 		CredentialsBean cred = serve.forgotPassword(credentialsBean);
 		assertEquals(cred,credentialsBean);
@@ -123,9 +126,9 @@ public class CredentialsServiceTest {
 
 	@Test
 	public void testLogout() {
-		when(credDao.getOne("bhuvan223")).thenReturn(credentialsBean);
+		when(credDao.getOne("Ra3456")).thenReturn(credentialsBean);
 		CredentialsService serve=new CredentialsService(credDao);
-		boolean result=serve.logout("bhuvan223");
+		boolean result=serve.logout("Ra3456");
 		assertEquals(true,result);
 		
 	}
