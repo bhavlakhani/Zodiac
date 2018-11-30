@@ -35,13 +35,5 @@ public class ProfileControllerTest {
 		assertEquals(pro,profile);
 		//assertEquals(credentials,cred);		//fail("Not yet implemented");
 	}
-	
-	@Test
-	public void testfindAge() {
-		when(serve.findAge("bhuvan")).thenReturn(profile);
-		ProfileController creden=new ProfileController(serve);
-		pro=creden.findAge("bhuvan");
-		assertEquals(profile.getFirstName(),pro.getFirstName());
-	}
 
 }

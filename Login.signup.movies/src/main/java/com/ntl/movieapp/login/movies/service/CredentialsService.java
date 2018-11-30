@@ -1,7 +1,5 @@
 package com.ntl.movieapp.login.movies.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,33 +29,15 @@ public class CredentialsService {
 	
 	
 	
-	public boolean authenticateUserId(CredentialsBean credential) {
-		Optional<CredentialsBean> cb = credDao.findById(credential.getUserID());
-		if(cb.isPresent()) {
-			credentialsBean = cb.get();
-			if(credentialsBean.getPassword().equals(credential.getPassword()))
-				return true;
-		}
-		return false;
+	public boolean authenticate(CredentialsBean credential) {
+		credentialsBean = credDao.getOne(credential.getUserID());
+		if(credentialsBean.getPassword().equals(credential.getPassword()))
+			return true;
+		else 
+			return false;
  }
-	
-	public boolean authenticateEmail(CredentialsBean credential) {
-		credentialsBean = credDao.findByEmailID(credential.getEmailID());
-		if(credentialsBean.getPassword().equals(credential.getPassword())) {
-			return true;
-		}
-		else 
-			return false;
-		
-	}
-	
-	public boolean authenticatePhone(CredentialsBean credential) {
-		credentialsBean = credDao.findByMobileNo(credential.getMobileNo());
-		if (credentialsBean.getPassword().equals(credential.getPassword()))
-			return true;
-		else 
-			return false;
-	}
+
+
 
 
 	public boolean changeLoginStatus(CredentialsBean credential, int loginStatus) {
@@ -75,47 +55,16 @@ public class CredentialsService {
 	}
 
 
-	public CredentialsBean loginUserid(CredentialsBean credential) {
-		
-		boolean result=	authenticateUserId(credential);
-		if(result) {
-			changeLoginStatus(credential, 1);
-			return credentialsBean;
-		}else {
-			return new CredentialsBean();
-		}
-	}
-	
-	
-	public CredentialsBean loginEmail(CredentialsBean credential) {
-		boolean result=	authenticateEmail(credential);
-		if(result) {
-			CredentialsBean cb = credDao.findByEmailID(credential.getEmailID());
-			changeLoginStatus(cb, 1);
-			cb.setPassword(null);
-			return cb;
-		  }
-		else {
-			return new CredentialsBean();
-		}
-					
-	}
-	
-	
-	public CredentialsBean loginPhone(CredentialsBean credential) {
-		boolean result=	authenticatePhone(credential);
-		if(result) {
-		  CredentialsBean cb = credDao.findByMobileNo(credential.getMobileNo());
-		  changeLoginStatus(cb, 1);
-		  cb.setPassword(null);
-		  return cb;
-		}
-		else {
-			return new CredentialsBean();
-		}
-	}
-	
-	
+	public CredentialsBean login(CredentialsBean credential) {
+		boolean result=	authenticate(credential);
+				if(result) {
+					changeLoginStatus(credential, 1);
+					credential.setPassword(null);
+					return credential;
+					}
+				else
+					return null;
+				}
 	
 	public CredentialsBean forgotPassword(CredentialsBean credentials) {
 		credentialsBean = credDao.getOne(credentials.getUserID());

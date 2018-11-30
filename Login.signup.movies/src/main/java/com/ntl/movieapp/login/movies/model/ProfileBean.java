@@ -13,7 +13,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 
 @Entity
@@ -29,38 +28,31 @@ public class ProfileBean {
 	private String firstName;
 	@Column(name="LASTNAME")
 	private String lastName;
-	@Column(name="DateofBirth")
+	@Column(name="DATEOFBIRTH")
 	private LocalDate dateOfBirth;
 	@Column(name="GENDER")
 	private String gender;
-	@Column(name="Age")
-	private int age;
+	@Column(name="COUNTRY")
+	private String country;
 	@Column(name="STATE")
 	private String state;
 	@Column(name="PINCODE")
 	private String pincode;
-	@Transient
+	@Column(name="MOBILENO")
 	private String mobileNo;
-	@Transient
+	@Column(name="EMAILID")
 	private String emailID;
-	@Transient
+	@Column(name="PASSWORD")
 	private String password;
-	@Transient
+	@Column(name="AuthQuestion")
 	private String authQuestion;
-	@Transient
+	@Column(name="AuthAnswer")
 	private String authAnswer;
 	
 	
-	public ProfileBean(String firstName, LocalDate dateOfBirth, int age, String emailID, String password) {
-		super();
-		this.firstName = firstName;
-		this.dateOfBirth = dateOfBirth;
-		this.age = age;
-		this.emailID = emailID;
-		this.password = password;
-	}
-
-
+	
+	
+	
 	/**
 	 * 
 	 */
@@ -120,11 +112,11 @@ public class ProfileBean {
 		this.gender = gender;
 	}
 	
-	public int getAge() {
-		return age;
+	public String getCountry() {
+		return country;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	public String getState() {
 		return state;

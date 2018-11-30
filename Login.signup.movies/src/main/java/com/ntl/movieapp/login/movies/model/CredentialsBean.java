@@ -24,42 +24,12 @@ public class CredentialsBean {
 	private String password;
 	@Column(name="loginstatus")
 	private int loginStatus;
-	@Column(name="authQuestion")
+	@Column(name="AuthQuestion")
 	private String authQuestion;
-	@Column(name="authAnswer")
+	@Column(name="AuthAnswer")
 	private String authAnswer;
-	@Column(name="userType")
-	private String userType;
-	@Column(name="EmailID")
-	private String emailID; 
-	@Column(name="MobileNo")
-	private String mobileNo;
 	
 	
-	public String getEmailID() {
-		return emailID;
-	}
-
-
-
-	public void setEmailID(String emailID) {
-		this.emailID = emailID;
-	}
-
-
-
-	public String getMobileNo() {
-		return mobileNo;
-	}
-
-
-
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
-
-
-
 	public CredentialsBean() {
 		super();
 	}
@@ -79,17 +49,6 @@ public class CredentialsBean {
 	}
 
 	
-	public CredentialsBean(String userID, String password, int loginStatus, String emailID, String mobileNo) {
-		super();
-		this.userID = userID;
-		this.password = password;
-		this.loginStatus = loginStatus;
-		this.emailID = emailID;
-		this.mobileNo = mobileNo;
-	}
-
-
-
 	public String getAuthQuestion() {
 		return authQuestion;
 	}
@@ -115,18 +74,6 @@ public class CredentialsBean {
 
 
 	
-
-	public String getUserType() {
-		return userType;
-	}
-
-
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
-
-
 
 	public String getUserID() {
 		return userID;

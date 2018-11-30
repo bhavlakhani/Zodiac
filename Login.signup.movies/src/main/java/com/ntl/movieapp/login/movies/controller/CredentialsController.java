@@ -27,27 +27,11 @@ public class CredentialsController {
 	public CredentialsController(CredentialsService credService) {
 		this.credService=credService;
 	}
-	
 
-	@PostMapping("/login/userid")
-	public CredentialsBean loginUserid(@RequestBody CredentialsBean credentialsBean) {
+	@PostMapping("/login")
+	public CredentialsBean login(@RequestBody CredentialsBean credentialsBean) {
 		
-			return credService.loginUserid(credentialsBean);
-		
-	}
-	
-	@PostMapping("/login/email")
-	public CredentialsBean loginEmail(@RequestBody CredentialsBean credentialsBean) {
-		   
-			return credService.loginEmail(credentialsBean);
-		
-	}
-	
-	
-	@PostMapping("/login/phone")
-	public CredentialsBean loginPhone(@RequestBody CredentialsBean credentialsBean) {
-		
-			return credService.loginPhone(credentialsBean);
+			return credService.login(credentialsBean);
 		
 	}
 	

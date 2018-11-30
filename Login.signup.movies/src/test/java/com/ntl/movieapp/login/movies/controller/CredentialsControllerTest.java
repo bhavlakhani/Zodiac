@@ -20,7 +20,7 @@ import com.ntl.movieapp.login.movies.service.CredentialsService;
 public class CredentialsControllerTest {
 
 	CredentialsBean cred=new CredentialsBean();
-CredentialsBean credentials=new CredentialsBean("Rashi","Rashi@123",1, "rasi16@gmail.com","73645726456");
+CredentialsBean credentials=new CredentialsBean("bhuvan","Nangal@123",1);
 //CredentialsBean cren=new CredentialsBean(null,null,null);
 
 String userId="";
@@ -31,30 +31,12 @@ CredentialsController credentialsController=new  CredentialsController();
 //CredentialsController credentialsController1=new  CredentialsController();
 
 	@Test
-	public void testLoginUserId() {
-		when(serve.loginUserid(credentials)).thenReturn(credentials);
+	public void testLogin() {
+		when(serve.login(credentials)).thenReturn(credentials);
 		CredentialsController creden=new CredentialsController(serve);
-		cred=creden.loginUserid(credentials);
+		cred=creden.login(credentials);
 		assertEquals(credentials,cred);
 		
-		
-	}
-	
-	@Test
-	public void testLoginEmail() {
-		when(serve.loginEmail(credentials)).thenReturn(credentials);
-		CredentialsController creden=new CredentialsController(serve);
-		cred=creden.loginEmail(credentials);
-		assertEquals(credentials,cred);
-		
-	}
-	
-	@Test
-	public void testLoginPhone() {
-		when(serve.loginPhone(credentials)).thenReturn(credentials);
-		CredentialsController creden=new CredentialsController(serve);
-		cred=creden.loginPhone(credentials);
-		assertEquals(credentials,cred);
 		
 	}
 

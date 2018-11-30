@@ -8,8 +8,4 @@ import com.ntl.movieapp.login.movies.model.CredentialsBean;
 @Repository
 public interface CredentialsDao extends JpaRepository<CredentialsBean, String> {
 
-	public CredentialsBean findByEmailID(String emailID);
-
-	public CredentialsBean findByMobileNo(String mobileNo);
-
 }
